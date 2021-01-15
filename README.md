@@ -3,6 +3,12 @@
 ## Descriere
 Aplicatia modeleaza un database bazat pe entitati reale ale competitiei Formula 1, respectand reguli de integritate ale constrangerilor reale din competitie, de exemplu fiecare echipa are maximum 2 piloti inregistrati simultan. Aplicatia este separata in 3 layer-uri: Controller layer-ul trimite fiecare request in Service layer, care interogheaza, extinde, modifica sau micsoreaza Model layer-ul. Pentru fiecare tabel din database exista clasa Entity, interfata Repository, clasa Service, clasa Controller, clasa ExceptionNotFoundHandler si clasa ExceptionNotFoundAdvice.
 
+## Dependinte
+Aplicatia a fost creata cu Spring Initializr si contine urmatoarele dependinte:
+* **lombok** pentru autogenerare de functii generale in entitati
+* **Spring MVC Boot** pentru generarea intregii structuri MVC a site-ului si pentru serverul de Tomcat
+* **MongoDb** pentru persistenta intr-o baza de date
+
 ## Model layer
 Layer-ul Model inglobeaza 8 entitati in total, 6 entitati principale si 2 rezolvari M:M. Cele 6 entitati principale sunt Driver, Team, Car, Championship, Race, Track, iar rezolvarile M:M sunt DriverContract, ce rezolva interactiunea intre Driver si Team, precum si ChampionshipRegistration, ce rezolva interactiunea intre Championship si Team.
 
